@@ -1,15 +1,33 @@
-/* JUST FOR DEMO PURPORSES, REPLACE WITH YOUR OWN CODE */
-
-#demo{
-  width: 100vw;
-  height: 100vh;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+body{
+  background-color:blue;
+  
 }
 
-#demo h1{
-  display: grid;
-  place-items: center;
+.submitForm{
+  position: relative;
+  top:250px;
+  display:flex;
+  justify-content: center;
+ 
+}
+input{
+  height: 40px;
+  size:40px;
+}
+button{
+  margin:5px;
+  left:10px;
+  position:relative;
+  background:35px;
+  color:white;
+  border-radius: 10px;
+  height:40px;
+}
+#title{
+  text-align: center;
+  position: relative;
+  top:100px;
+  color:white;
 }
 
-/* END DEMO */
+
