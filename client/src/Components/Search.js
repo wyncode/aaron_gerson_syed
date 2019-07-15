@@ -1,8 +1,8 @@
 import React from 'react';
 
-import styles from './Search.module.css';
+ import styles from './Search.module.css';
 
-class Search extends React.Component {
+ class Search extends React.Component {
     searchResult = () =>{
         // var results = document.getElementById('searchbar').value
          fetch(`/products/search/${this.state.searchInput}`)
@@ -10,14 +10,14 @@ class Search extends React.Component {
          .then(data => console.log(data.results))
        }
 
-       state = {searchInput: ""}
+        state = {searchInput: ""}
 
-  render() {
+   render() {
   return (
     <div className={styles.search}>
       <h1 id={styles.title}>OpenBox Catalog</h1>
-      
-      <div id={styles.submitForm}> 
+
+       <div id={styles.submitForm}> 
         <form>
           <input value = {this.state.searchinput} type="text" id={styles.searchBox} size="70" placeholder="Search Open Box Item"></input>
         </form>
@@ -28,4 +28,3 @@ class Search extends React.Component {
 }
 }
 export default Search;
-
