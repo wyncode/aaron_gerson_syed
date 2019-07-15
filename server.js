@@ -3,16 +3,16 @@ if (process.env.NODE_ENV !== 'production') {
 }
 
 const express = require("express")
+const axios = require("axios")
 const path = require("path")
 const app = express()
 
-// JUST FOR DEMO PURPOSES, PUT YOUR ACTUAL API CODE HERE
-app.get('/api/demo', (request, response) => {
-  response.json({
-    message: "Hello from server.js"
-  })
+app.get('/products/search/:query', async (request, response) => {
+  const {data} = await axios.get(`https://api.bestbuy.com/v1/products((search=${request.params.query})&manufacturer=Apple)?apiKey=${process.env.BESTBUY_API_KEY}&sort=sku.asc&show=sku&pageSize=20&format=json`)
+  const skuList = data.products.map(product => product.sku).join(",")
+  const openBox = await axios.get(`https://api.bestbuy.com/beta/products/openBox(sku%20in(${skuList}))?apiKey=${process.env.BESTBUY_API_KEY}&pageSize=20`)
+  response.send(openBox.data.results)
 })
-// END DEMO
 
 if (process.env.NODE_ENV === 'production') {
   // Serve any static files
