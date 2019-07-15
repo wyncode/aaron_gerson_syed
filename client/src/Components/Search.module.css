@@ -1,0 +1,27 @@
+.search #title{
+  color: white;
+  position: relative;
+  text-align: center;
+  top: 100px;
+}
+  
+.search #submitForm{
+  display: flex;
+  justify-content: center;
+  position: relative;
+  top: 250px;
+}
+
+.search input{
+  height: 40px;
+}
+
+.search button{
+  margin: 5px;
+  left: 10px;
+  position: relative;
+  background: 35px;
+  color: white;
+  border-radius: 10px;
+  height: 40px;
+}
