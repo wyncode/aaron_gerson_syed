@@ -1,23 +1,19 @@
-import React from 'react'
-import './App.css'
+import React from 'react';
+
+import './App.css';
+import Search from './Search'
 
 class App extends React.Component {
-  state = { serverMessage: '' }
-
-  componentDidMount(){
-    fetch('/api/demo')
-      .then(response => response.json())
-      .then(data => this.setState({ serverMessage: data.message }))
-  }
-
-  render(){
-    return (
-      <div id="demo">
-        <h1>Hello from client/src/App.js</h1>
-        <h1>{this.state.serverMessage}</h1>
-      </div>
-    )
-  }
+  
+  
+  
+  render() {
+  return (
+    <div className="App">
+      <Search />
+    </div>
+  );
 }
+}
+export default App;
 
-export default App
