@@ -1,4 +1,5 @@
 import React from 'react'
+import axios from 'axios'
 
 import styles from './Search.module.css'
 
@@ -6,11 +7,10 @@ class Search extends React.Component {
   state = {
     searchInput: ""
   }
-  
+
   searchResult = () => {
-    fetch(`/products/search/${this.state.searchInput}`)
-      .then(Response => Response.json())
-      .then(data => console.log(data.results))
+    axios(`/products/search/${this.state.searchInput}`)
+      .then(response => console.log(response.data))
   }
 
   render() {
