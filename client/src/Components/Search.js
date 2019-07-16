@@ -4,15 +4,15 @@ import axios from 'axios'
 import styles from './Search.module.css'
 
 class Search extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
+  
+    state = {
       inputValue: ''
     };
-  }
+  
 
-  searchResult = () => {
-    axios(`/products/search/${this.state.searchInput}`)
+  searchResult = e => {
+    e.preventDefault()
+    axios(`/products/search/${this.state.inputValue}`)
       .then(response => console.log(response.data))
   }
 
