@@ -1,0 +1,52 @@
+
+.result {
+  display:grid;
+  place-items: center;
+  border: solid 1px black;
+  padding:20px;
+  background-color:rgb(255, 255, 255);
+  border-radius: 20px;
+  text-align: center;
+  
+}
+
+.result:hover{
+  box-shadow: 20px 20px black;
+}
+
+
+
+.result spam{
+    color:red;
+    font-weight:bold;
+}
+
+.result button{
+    height:50px;
+    width:100px;
+    background-color:#dd480d;
+    border-radius:10px;
+    font-size:16px;
+    font-family: Arial, Helvetica, sans-serif;
+    color:rgb(255, 255, 255);
+}
+
+.result h2{
+    font-size: 18px;
+    font-family: Arial, Helvetica, sans-serif;
+    
+}
+
+.result #openP spam{
+    color:green;
+}
+.result p{
+    font-size: 15px;
+    color:rgb(80, 71, 71);
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight:bold;
+}
+.result img{
+    width:200px;
+}
+
