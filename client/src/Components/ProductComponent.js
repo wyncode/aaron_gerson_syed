@@ -1,15 +1,16 @@
 import React from 'react'
-
+import style from './Product.module.css'
 const ProductComponent = (props) =>  {
   return(
-    <div>
+    <div className={style.product}>
       <h2>{props.title}</h2>
       <img src={props.image} alt={props.sku}/>
-      <p>OpenBox Price: {props.currentPrice}</p>
-      <p>Original Price: {props.regularPrice}</p>
-      <p>Sku: {props.sku}</p>
-      <p>CustomerReviews: Average Score:{props.reviews.average} Total Reviews:{props.reviews.total}</p>
-      <button src={props.bestBuyURL}>Site</button>
+      <p id={style.openP}>OpenBox Price: <spam>{props.currentPrice}</spam></p>
+      <p id={style.originalP}>Original Price: <spam>{props.regularPrice}</spam></p>
+      <p id={style.sku}>Sku: <spam>{props.sku}</spam></p>
+      <p id={style.customer}>Average Score: <spam>{props.reviews.average}</spam></p>
+      <p id={style.total}> Total Reviews: <spam> {props.reviews.total}</spam></p>
+      <button src={props.bestBuyURL}>BestBuy Site</button>
     </div>
   ) 
 }

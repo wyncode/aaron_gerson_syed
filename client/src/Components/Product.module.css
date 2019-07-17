@@ -1,0 +1,54 @@
+.product{
+  background-color:white;
+  width:600px;
+  display:grid;
+  align-items: center;
+  place-items: center;
+  border-radius: 10px;
+  margin:20px;
+}
+
+.product #openP spam{
+  color:green;
+}
+
+.product #customer spam{
+  color:green;
+}
+
+.product #originalP spam{
+  color:red;
+}
+
+.product #sku spam{
+  color:black;
+}
+.product #total spam{
+  color:blue;
+}
+.product h2{
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+  font-weight: bold;
+
+}
+spam{
+  font-weight:bold;
+}
+p{
+  color:grey;
+  font-weight: lighter;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.product button{
+  margin:30px;
+  height:80px;
+  width:120px;
+  border-radius: 10px;
+  background-color: rgb(243, 139, 21);
+  color: white;
+  font-size: 15px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+

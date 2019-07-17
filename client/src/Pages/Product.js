@@ -2,6 +2,7 @@ import React from 'react'
 import axios from 'axios'
 import ProductComponent from '../Components/ProductComponent'
 import {Redirect} from 'react-router-dom'
+import style from './Product.module.css'
 
 class Product extends React.Component {
   state = {
@@ -19,7 +20,7 @@ class Product extends React.Component {
   render(){
     const {currentProduct, productExists} = this.state
     return(
-      <>
+      <div className={style.product}>
         { (productExists && Object.keys(currentProduct).length > 0) ?
           <ProductComponent 
             sku={currentProduct.sku}
@@ -38,7 +39,7 @@ class Product extends React.Component {
           :
           (productExists && Object.keys(currentProduct).length === 0 ? <Redirect to="/" /> : "<h1>Loading...</h1>")
         } 
-      </>
+      </div>
     )
   }
 }
