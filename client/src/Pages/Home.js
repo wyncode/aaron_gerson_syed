@@ -1,10 +1,14 @@
 import React from 'react'
 import Search from '../Components/Search'
-
+import logo from '../img/logo.png'
+import styles from "./Home.module.css"
 const Home = () => {
   return(
-    <div id="home">
-      <h1>This is the homepage</h1>
+    <div className={styles.home}>
+      <div id={styles.imgContainer}>
+        <img src={logo} alt="Logo"/>
+      </div>
+      
       <Search />
     </div>
   )
