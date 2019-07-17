@@ -2,8 +2,6 @@ import React from 'react'
 import {Redirect} from 'react-router-dom'
 import Button from './Button'
 
-import logo from '../img/logo.png'
-
 import styles from './Search.module.css'
 
 class Search extends React.Component {
