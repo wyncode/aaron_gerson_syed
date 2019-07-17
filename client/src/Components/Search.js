@@ -1,5 +1,8 @@
 import React from 'react'
 import {Redirect} from 'react-router-dom'
+import Button from './Button'
+
+import logo from '../img/logo.png'
 
 import styles from './Search.module.css'
 
@@ -38,7 +41,7 @@ class Search extends React.Component {
             size="70"
             placeholder="Search Open Box Item"
           />
-          { !this.props.updatedSearchInput && <button type="submit">Submit</button> }
+          { !this.props.updatedSearchInput && <Button/> }
         </form>
       </div>
     )

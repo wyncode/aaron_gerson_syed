@@ -1,0 +1,10 @@
+.home {
+  display: grid;
+  place-items: center;
+  grid-template-columns: 1fr;
+}
+
+.home img{
+  height: 200px;
+  padding-top:60px;
+}
