@@ -12,21 +12,26 @@ class Search extends React.Component {
   
   handleSubmit = e => {
     e.preventDefault()
-    this.setState({submitted: true})
+    if (e.target.searchInput.value.trim() !== '') {
+      this.setState({submitted: true})
+    }
   }
 
   updateInputValue = e => {
     this.setState({
       inputValue: e.target.value
     })
-    if(this.props.updatedSearchInput) {
-      this.props.updatedSearchInput(e.target.value)
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    if (prevState.submitted !== this.state.submitted) {
+      this.setState({ submitted: false })
     }
   }
 
   render() {
-    if (this.state.submitted && !this.props.updatedSearchInput){
-      return <Redirect to={{pathname: "search", search: `?query=${this.state.inputValue}`}} />
+    if (this.state.submitted){
+      return <Redirect to={{pathname: "search", search: `?query=${this.state.inputValue.trim()}`}} />
     }
     return (
       <div className={styles.search}>        
@@ -35,11 +40,12 @@ class Search extends React.Component {
             onChange={evt => this.updateInputValue(evt)}
             value={this.state.inputValue}
             type="text"
+            name="searchInput"
             id={styles.searchBox}
             size="70"
             placeholder="Search Open Box Item"
           />
-          { !this.props.updatedSearchInput && <Button/> }
+          <Button/>
         </form>
       </div>
     )
