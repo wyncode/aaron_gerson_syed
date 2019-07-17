@@ -2,7 +2,7 @@ import React from 'react'
 import axios from 'axios'
 import { createBrowserHistory } from 'history'
 import Search from '../Components/Search'
-import ResultsComponent from '../Components/ResultsComponent'
+import ResultsList from '../Components/ResultsList'
 import {debounce} from '../utils'
 
 
@@ -44,7 +44,7 @@ class Results extends React.Component {
     return(
       <>
         <Search onResults updateSearchInput={this.updateSearchInput}/>
-        <ResultsComponent results={results} />
+        <ResultsList results={results} />
       </>
     )
   }
