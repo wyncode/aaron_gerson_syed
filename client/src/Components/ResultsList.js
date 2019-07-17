@@ -1,10 +1,11 @@
 import React from 'react'
 import ResultsListItem from './ResultsListItem'
+import styles from './ResultsList.module.css'
 
 class ResultsList extends React.Component {
   render() {
     return (
-      <ul>
+      <ul className={styles.results}>
         {
           this.props.results.map(item => (
             <ResultsListItem
