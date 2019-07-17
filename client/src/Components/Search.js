@@ -5,11 +5,11 @@ import styles from './Search.module.css'
 
 class Search extends React.Component {
   state = {
-    inputValue: '',
+    inputValue: this.props.initialValue || '',
     submitted: false
   }
   
-  searchResult = e => {
+  handleSubmit = e => {
     e.preventDefault()
     this.setState({submitted: true})
   }
@@ -18,22 +18,27 @@ class Search extends React.Component {
     this.setState({
       inputValue: e.target.value
     })
-    if(this.props.onResults) {
-      this.props.updateSearchInput(this.state.inputValue)
+    if(this.props.updatedSearchInput) {
+      this.props.updatedSearchInput(e.target.value)
     }
   }
 
   render() {
-    if (this.state.submitted && !this.props.onResults){
+    if (this.state.submitted && !this.props.updatedSearchInput){
       return <Redirect to={{pathname: "search", search: `?query=${this.state.inputValue}`}} />
     }
     return (
-      <div className={styles.search}>
-        <h1 id={styles.title}>OpenBox Catalog</h1>
-        
-        <form id={styles.submitForm} onSubmit={this.searchResult}>
-          <input onChange={evt => this.updateInputValue(evt)} value={this.state.inputValue} type="text" id={styles.searchBox} size="70" placeholder="Search Open Box Item"></input>
-          { !this.props.onResults && <button type="submit">Submit</button> }
+      <div className={styles.search}>        
+        <form id={styles.submitForm} onSubmit={this.handleSubmit}>
+          <input 
+            onChange={evt => this.updateInputValue(evt)}
+            value={this.state.inputValue}
+            type="text"
+            id={styles.searchBox}
+            size="70"
+            placeholder="Search Open Box Item"
+          />
+          { !this.props.updatedSearchInput && <button type="submit">Submit</button> }
         </form>
       </div>
     )

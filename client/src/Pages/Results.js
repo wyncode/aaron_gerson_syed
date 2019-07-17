@@ -13,26 +13,24 @@ class Results extends React.Component {
     query: this.params.get("query")
   }
 
-  updateSearchInput = (query) => {
-      // TODO: add checks for if query exists and such...
-      const history = createBrowserHistory()
-      history.replace({
-        pathname: '/search',
-        search: `?query=${query}`
-      })
+  handleChange = (query) => {
+    // TODO: add checks for if query exists and such...
+    const history = createBrowserHistory()
+    history.replace({
+      pathname: '/search',
+      search: `?query=${query}`
+    })
 
     this.setState({query}, () => this.debouncedAxios())
   }
 
   debouncedAxios = debounce(() => {
-    // this.getNewResults(this.state.query)
-    axios(`/products/search/${this.state.query}`)
-    .then(response => response && this.setState({results: response.data}))
-  }, 500)
+    this.getNewResults(this.state.query)
+  }, 1500)
 
   getNewResults = (query) => {
     axios(`/products/search/${query}`)
-    .then(response => response && this.setState({results: response.data}))
+      .then(response => response && this.setState({results: response.data}))
   }
 
   componentDidMount() {
@@ -40,10 +38,10 @@ class Results extends React.Component {
   }
 
   render() {
-    const {results} = this.state
+    const {results, query} = this.state
     return(
       <>
-        <Search onResults updateSearchInput={this.updateSearchInput}/>
+        <Search initialValue={query} updatedSearchInput={this.handleChange}/>
         <ResultsList results={results} />
       </>
     )
