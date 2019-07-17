@@ -1,6 +1,6 @@
 import React from 'react'
 
-const ResultsComponent = (props) =>  {
+const ResultsListItem = (props) =>  {
   return (
     <li>
       <h2>{props.title}</h2>
@@ -11,4 +11,4 @@ const ResultsComponent = (props) =>  {
   )
 }
 
-export default ResultsComponent
+export default ResultsListItem
