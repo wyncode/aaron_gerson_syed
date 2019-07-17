@@ -4,9 +4,10 @@ import styles from './ResultsList.module.css'
 
 const ResultsList = (props) => {
   return (
-    <ul>
+    <ul className={styles.results}> 
+      {props.loading && <h3>Loading...</h3>}
       {
-        (props.results && props.results.length > 0) ?
+        (!props.loading && props.results && props.results.length > 0) ?
         props.results.map(item => (
           <ResultsListItem
             key={item.sku}
@@ -18,7 +19,7 @@ const ResultsList = (props) => {
           />
         ))
         :
-        <li>No Results Found</li>
+        (!props.loading && props.results && props.results.length === 0 && <li>No Results Found</li>)
       }
     </ul>
   )
