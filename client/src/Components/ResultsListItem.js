@@ -10,7 +10,7 @@ const ResultsListItem = (props) =>  {
       <img id={styles.image}src={props.imgSrc} alt={props.sku}/>
       <p id={styles.openP}>OpenBox Price: <span>${props.currentPrice}</span></p>
       <p id={styles.originalP}>Original Price: <span>${props.originalPrice}</span></p>
-      <Link to={`/product/${props.sku}`}>Learn More</Link>
+      <Link to={`/product/${props.sku}`}>Details</Link>
     </li>    
   )
 }

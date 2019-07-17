@@ -3,7 +3,6 @@
   place-items: stretch;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   grid-gap: 25px;
-  position: relative;
-  top:300px;
-  
+  margin: 0;
+  padding-bottom: 25px;
 }

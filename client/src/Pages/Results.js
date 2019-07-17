@@ -3,6 +3,8 @@ import axios from 'axios'
 import Search from '../Components/Search'
 import ResultsList from '../Components/ResultsList'
 
+import styles from './Results.module.css'
+
 class Results extends React.Component {
   params = new URLSearchParams(this.props.location.search)
   state = {
@@ -31,10 +33,10 @@ class Results extends React.Component {
   render() {
     const {results, query, loading} = this.state
     return(
-      <>
+      <div className={styles.results}>
         <Search initialValue={query} />
         <ResultsList results={results} loading={loading} />
-      </>
+      </div>
     )
   }
 }

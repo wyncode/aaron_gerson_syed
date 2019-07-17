@@ -7,77 +7,61 @@
   background-color:rgb(255, 255, 255);
   border-radius: 20px;
   text-align: center;
-  
 }
 
-.result:hover {opacity: 0.6}
-
-
-
-
-.result spam{
-    color:red;
-    font-weight:bold;
-    
+.result:hover {
+  opacity: 0.6
 }
 
-.result #originalP spam{
-text-decoration: line-through;
+.result span{
+  color:red;
+  font-weight:bold; 
+}
+
+.result #originalP span{
+  text-decoration: line-through;
 }
 
 .result a{
-    -webkit-appearance: button;
-    -webkit-writing-mode: horizontal-tb !important;
-    text-rendering: auto;
-    letter-spacing: normal;
-    word-spacing: normal;
-    text-transform: none;
-    text-indent: 0px;
-    text-shadow: none;
-    display: inline-block;
-    align-items: flex-start;
-    box-sizing: border-box;
-    margin: 0em;
-    font: 400 11px system-ui;
-    border-width: 1px;
-    border-style: solid;
-    border-color: rgb(216, 216, 216) rgb(209, 209, 209) rgb(186, 186, 186);
-    border-image: initial;
-
-        padding: 15px 25px;
-        font-size: 18px;
-        text-align: center;
-        cursor: pointer;
-        outline: none;
-        color: #fff;
-        background-color: #dd480d;
-        border: none;
-        border-radius: 15px;
+  padding: 15px 25px;
+  font-size: 18px;
+  text-align: center;
+  cursor: pointer;
+  outline: none;
+  color: #fff;
+  background-color: #dd480d;
+  border: none;
+  border-radius: 15px;
 }
 
-.result button:hover {background-color: #dd480d}
+.result a:hover {
+  background-color: #dd480d
+}
 
-.result button:active {
+.result a:active {
   background-color: #dd480d;
   box-shadow: 0 5px #666;
   transform: translateY(4px);
 }
+
 .result h2{
-    font-size: 18px;
-    font-family: Arial, Helvetica, sans-serif;
-    
+  font-size: 18px;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
-.result #openP spam{
-    color:green;
+.result #openP span{
+  color:green;
 }
 .result p{
-    font-size: 15px;
-    color:rgb(80, 71, 71);
-    font-family: Arial, Helvetica, sans-serif;
-    font-weight:bold;
+  font-size: 15px;
+  color:rgb(80, 71, 71);
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight:bold;
 }
 .result img{
-    width:200px;
+  max-width:200px;
+  max-height:200px;
+  width: auto;
+  height: auto;
 }
 

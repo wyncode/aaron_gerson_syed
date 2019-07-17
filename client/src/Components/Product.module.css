@@ -8,22 +8,22 @@
   margin:20px;
 }
 
-.product #openP spam{
+.product #openP span{
   color:green;
 }
 
-.product #customer spam{
+.product #customer span{
   color:green;
 }
 
-.product #originalP spam{
+.product #originalP span{
   color:red;
 }
 
-.product #sku spam{
+.product #sku span{
   color:black;
 }
-.product #total spam{
+.product #total span{
   color:blue;
 }
 .product h2{
@@ -32,7 +32,7 @@
   font-weight: bold;
 
 }
-spam{
+span{
   font-weight:bold;
 }
 p{
