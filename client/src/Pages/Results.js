@@ -5,12 +5,12 @@ import Search from '../Components/Search'
 import ResultsList from '../Components/ResultsList'
 import {debounce} from '../utils'
 
-
 class Results extends React.Component {
   params = new URLSearchParams(this.props.location.search)
   state = {
     results: [],
-    query: this.params.get("query")
+    query: this.params.get("query"),
+    loading: true
   }
 
   handleChange = (query) => {
@@ -21,7 +21,7 @@ class Results extends React.Component {
       search: `?query=${query}`
     })
 
-    this.setState({query}, () => this.debouncedAxios())
+    this.setState({query, loading: true}, () => this.debouncedAxios())
   }
 
   debouncedAxios = debounce(() => {
@@ -30,7 +30,8 @@ class Results extends React.Component {
 
   getNewResults = (query) => {
     axios(`/products/search/${query}`)
-      .then(response => response && this.setState({results: response.data}))
+      .then(response => response && this.setState({results: response.data, loading: false}))
+      .catch(e => this.setState({results: [], loading: false}))
   }
 
   componentDidMount() {
@@ -38,11 +39,11 @@ class Results extends React.Component {
   }
 
   render() {
-    const {results, query} = this.state
+    const {results, query, loading} = this.state
     return(
       <>
         <Search initialValue={query} updatedSearchInput={this.handleChange}/>
-        <ResultsList results={results} />
+        <ResultsList results={results} loading={loading} />
       </>
     )
   }

@@ -1,19 +1,18 @@
+import React from 'react'
+
 const ProductComponent = (props) =>  {
-       
-    const items =
-     <div>
-      
-          <h2>{this.props.title}</h2>
-          <img>{this.props.images.standard}</img>
-          <p>OpenBox Price: {this.props.prices.current}</p>
-          <p>Original Price: {this.props.prices.regular}</p>
-          <p>Sku: {this.props.sku}</p>
-          <p>CustomerReviews: {this.props.customerReviews}</p>
-          <button src={this.props.links.product}>Site</button>
-      
+  return(
+    <div>
+      <h2>{props.title}</h2>
+      <img src={props.image} alt={props.sku}/>
+      <p>OpenBox Price: {props.currentPrice}</p>
+      <p>Original Price: {props.regularPrice}</p>
+      <p>Sku: {props.sku}</p>
+      <p>CustomerReviews: Average Score:{props.reviews.average} Total Reviews:{props.reviews.total}</p>
+      <button src={props.bestBuyURL}>Site</button>
     </div>
-    return items
-  }
+  ) 
+}
   
-  export default ProductComponent
+export default ProductComponent
   
