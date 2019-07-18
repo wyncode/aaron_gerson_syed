@@ -1,0 +1,9 @@
+.results{
+  display:grid;
+  place-items: stretch;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-gap: 25px;
+  margin: 0;
+  padding: 0 35px 25px 35px;
+  padding-bottom: 25px;
+}
