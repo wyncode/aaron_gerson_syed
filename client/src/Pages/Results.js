@@ -1,8 +1,7 @@
 import React from 'react'
 import axios from 'axios'
-import Search from '../Components/Search'
+import Navbar from '../Components/Navbar'
 import ResultsList from '../Components/ResultsList'
-
 import styles from './Results.module.css'
 
 class Results extends React.Component {
@@ -34,7 +33,7 @@ class Results extends React.Component {
     const {results, query, loading} = this.state
     return(
       <div className={styles.results}>
-        <Search initialValue={query} />
+        <Navbar initialValue={query} />
         <ResultsList results={results} loading={loading} />
       </div>
     )

@@ -5,7 +5,7 @@ import styles from './ResultsList.module.css'
 const ResultsList = (props) => {
   return (
     <ul className={styles.results}> 
-      {props.loading && <h3>Loading...</h3>}
+      {props.loading && <h3>Searching...</h3>}
       {
         (!props.loading && props.results && props.results.length > 0) ?
         props.results.map(item => (

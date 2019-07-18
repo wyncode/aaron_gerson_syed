@@ -1,6 +1,7 @@
 import React from 'react'
 import axios from 'axios'
 import ProductComponent from '../Components/ProductComponent'
+import Navbar from '../Components/Navbar'
 import {Redirect} from 'react-router-dom'
 import style from './Product.module.css'
 
@@ -21,6 +22,7 @@ class Product extends React.Component {
     const {currentProduct, productExists} = this.state
     return(
       <div className={style.product}>
+        <Navbar />
         { (productExists && Object.keys(currentProduct).length > 0) ?
           <ProductComponent 
             sku={currentProduct.sku}
@@ -34,10 +36,10 @@ class Product extends React.Component {
                 total: currentProduct.customerReviews.count
               }
             }
-            bestBuyURL={currentProduct.links.product}
+            bestBuyURL={currentProduct.links.addToCart}
           />
           :
-          (productExists && Object.keys(currentProduct).length === 0 ? <Redirect to="/" /> : "<h1>Loading...</h1>")
+          (productExists && Object.keys(currentProduct).length === 0 ? <Redirect to="/" /> : <h1>Loading...</h1>)
         } 
       </div>
     )

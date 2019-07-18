@@ -6,11 +6,15 @@ import styles from './ResultsListItem.module.css'
 const ResultsListItem = (props) =>  {
   return (
     <li className={styles.result}>
-      <h2 id={styles.title}>{props.title}</h2>
-      <img id={styles.image}src={props.imgSrc} alt={props.sku}/>
-      <p id={styles.openP}>OpenBox Price: <span>${props.currentPrice}</span></p>
+      <Link to={`/product/${props.sku}`}>
+        <img id={styles.image}src={props.imgSrc} alt={props.sku}/>
+      </Link>
+      <Link to={`/product/${props.sku}`}>
+        <h4 id={styles.title}>{props.title}</h4>
+      </Link>
       <p id={styles.originalP}>Original Price: <span>${props.originalPrice}</span></p>
-      <Link to={`/product/${props.sku}`}>Details</Link>
+      <p id={styles.openP}>OpenBox Price: <span>${props.currentPrice}</span></p>
+      <Link id={styles.detailButton} to={`/product/${props.sku}`}>Details</Link>
     </li>    
   )
 }

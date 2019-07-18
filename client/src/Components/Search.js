@@ -31,7 +31,7 @@ class Search extends React.Component {
 
   render() {
     if (this.state.submitted){
-      return <Redirect to={{pathname: "search", search: `?query=${this.state.inputValue.trim()}`}} />
+      return <Redirect to={`/search?query=${this.state.inputValue.trim()}`} />
     }
     return (
       <div className={styles.search}>        
@@ -42,7 +42,7 @@ class Search extends React.Component {
             type="text"
             name="searchInput"
             id={styles.searchBox}
-            size="70"
+            size="40"
             placeholder="Search Open Box Item"
           />
           <Button/>

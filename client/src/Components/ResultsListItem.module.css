@@ -2,15 +2,10 @@
 .result {
   display:grid;
   place-items: center;
-  border: solid 1px black;
   padding:20px;
   background-color:rgb(255, 255, 255);
   border-radius: 20px;
   text-align: center;
-}
-
-.result:hover {
-  opacity: 0.6
 }
 
 .result span{
@@ -18,11 +13,16 @@
   font-weight:bold; 
 }
 
+.result p {
+  margin: 5px;
+}
+
 .result #originalP span{
   text-decoration: line-through;
 }
 
-.result a{
+.result #detailButton{
+  margin-top: 10px;
   padding: 15px 25px;
   font-size: 18px;
   text-align: center;
@@ -32,13 +32,16 @@
   background-color: #dd480d;
   border: none;
   border-radius: 15px;
+  text-decoration: none;
+  font-family: 'Raleway', sans-serif;
 }
 
-.result a:hover {
-  background-color: #dd480d
+.result #detailButton:hover {
+  background-color: #dd480d;
+  opacity: 0.6;
 }
 
-.result a:active {
+.result #detailButton:active {
   background-color: #dd480d;
   box-shadow: 0 5px #666;
   transform: translateY(4px);

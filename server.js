@@ -9,11 +9,11 @@ const app = express()
 
 app.get('/products/search/:query', async (request, response) => {
   try {
-    const {data} = await axios.get(`https://api.bestbuy.com/v1/products((search=${request.params.query})&manufacturer=Apple)?apiKey=${process.env.BESTBUY_API_KEY}&sort=sku.asc&show=sku&pageSize=20&format=json`)
+    const {data} = await axios.get(`https://api.bestbuy.com/v1/products((search=${request.params.query}))?apiKey=${process.env.BESTBUY_API_KEY}&sort=sku.asc&show=sku&pageSize=75&format=json`)
     console.log(data)
     if(data && data.products && data.products.length > 0) {
       const skuList = data.products.map(product => product.sku).join(",")
-      const openBox = await axios.get(`https://api.bestbuy.com/beta/products/openBox(sku%20in(${skuList}))?apiKey=${process.env.BESTBUY_API_KEY}&pageSize=20`)  
+      const openBox = await axios.get(`https://api.bestbuy.com/beta/products/openBox(sku%20in(${skuList}))?apiKey=${process.env.BESTBUY_API_KEY}&pageSize=24`)  
       console.log(openBox.data.results)
       response.send(openBox.data.results)  
     } else {
