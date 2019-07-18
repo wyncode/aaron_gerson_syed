@@ -28,8 +28,8 @@ class Product extends React.Component {
             sku={currentProduct.sku}
             title={currentProduct.names.title}
             image={currentProduct.images.standard}
-            currentPrice={currentProduct.prices.current}
-            regularPrice={currentProduct.prices.regular}
+            currentPrice={currentProduct.offers[0].prices.current}
+            regularPrice={currentProduct.offers[0].prices.regular}
             reviews={
               {
                 average: currentProduct.customerReviews.averageScore,
